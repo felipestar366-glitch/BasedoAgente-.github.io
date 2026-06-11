@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ordem Paranormal - Grid de Campanhas</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
     <header>
         <div class="logo">CriadorVanish</div>
         <nav>
-            <a href="#">Campanhas</a>
+            <a href="campanhas.html">Campanhas</a>
             <a href="#">Fichas</a>
             <a href="#">Regras</a>
         </nav>
@@ -22,7 +22,8 @@
         <div class="hero-content">
             <h1>Sua Próxima Investigação Começa Aqui</h1>
             <p>Organize suas mesas, gerencie fichas de agentes e desvende o Outro Lado em um só lugar.</p>
-            <button class="btn-primary">Criar Mesa</button>
+            
+            <a href="campanhas.html" class="btn-campanha">Ver Campanhas</a>
         </div>
     </section>
 
@@ -43,15 +44,3 @@
 
 </body>
 </html>
-
-<script>
-        // Seleciona o botão pela classe dele
-        const botaoCampanha = document.querySelector('.btn-campanha');
-
-        // Adiciona o evento de clique
-        botaoCampanha.addEventListener('click', () => {
-            window.location.href = './campanhas.html'; // Caminho para a página de campanhas
-        });
-    </script>
-</body>
-
