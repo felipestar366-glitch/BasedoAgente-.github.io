@@ -231,6 +231,8 @@
             localStorage.setItem('agentesOrdem', JSON.stringify(listaAgentes));
             
             alert(`Agente ${nome} devidamente registrado nos arquivos locais da Base!`);
+
+            window.location.href = 'home.html';
             
             // Limpa o formulário para o próximo input
             document.getElementById('cadastroForm').reset();
