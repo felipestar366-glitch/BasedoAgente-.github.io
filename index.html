@@ -215,7 +215,38 @@
             alert(`Agente ${nome} cadastrado com sucesso! Enviando dados para a base de Sangue.`);
             // Aqui futuramente você vai conectar com o Firebase/Supabase
         });
-    </script>
+    <script>
+    document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        // Captura os valores dos campos
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const senha = document.getElementById('senha').value;
+        
+        // Cria o objeto do agente
+        const novoAgente = {
+            nome: nome,
+            email: email,
+            senha: senha,
+            dataCadastro: new Date().toLocaleDateString('pt-BR')
+        };
+
+        // Pega a lista de agentes já cadastrados ou cria uma nova se estiver vazia
+        let listaAgentes = JSON.parse(localStorage.getItem('agentesOrdem')) || [];
+        
+        // Adiciona o novo agente na lista
+        listaAgentes.push(novoAgente);
+        
+        // Salva a lista atualizada de volta no LocalStorage do navegador
+        localStorage.setItem('agentesOrdem', JSON.stringify(listaAgentes));
+        
+        alert(`Agente ${nome} devidamente registrado nos arquivos locais da Base!`);
+        
+        // Limpa o formulário
+        document.getElementById('cadastroForm').reset();
+    });
+</script>
 
 </body>
 </html>
